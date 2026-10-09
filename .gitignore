@@ -24,6 +24,8 @@ yarn-error.log
 .vscode/
 .assets/
 .public/
+assets/
+public/
 
 # Miscellaneous
 /.angular/cache

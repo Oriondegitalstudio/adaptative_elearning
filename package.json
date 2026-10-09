@@ -1,16 +1,22 @@
 {
-  "name": "adaptive-elearning",
-  "version": "0.0.0",
+  "name": "luna-learning-platform",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "npm@10.9.8",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:dev": "ng serve --configuration development",
     "build": "ng build",
+    "build:dev": "ng build --configuration development",
+    "build:prod": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:adaptive_elearning": "node dist/adaptive_elearning/server/server.mjs"
+    "test:ci": "ng test --watch=false",
+    "serve:ssr": "node dist/adaptive_elearning/server/server.mjs",
+    "format": "prettier --write \"src/**/*.{ts,html,css,json}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,html,css,json}\""
   },
-  "private": true,
-  "packageManager": "npm@10.9.8",
   "dependencies": {
     "@angular/common": "^22.0.0",
     "@angular/compiler": "^22.0.0",
@@ -20,6 +26,8 @@
     "@angular/platform-server": "^22.0.0",
     "@angular/router": "^22.0.0",
     "@angular/ssr": "^22.0.8",
+    "@ngx-translate/core": "^18.0.0",
+    "@ngx-translate/http-loader": "^18.0.0",
     "express": "^5.1.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
