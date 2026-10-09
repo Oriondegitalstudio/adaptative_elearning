@@ -20,7 +20,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
         [value]="value"
         [placeholder]="placeholder"
         [rows]="rows"
-        [maxlength]="maxLength"
+        [attr.maxlength]="maxLength"
         [disabled]="disabled"
         [required]="required"
         [attr.aria-invalid]="error ? 'true' : null"
