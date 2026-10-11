@@ -1,0 +1,64 @@
+<section class="student-section">
+  <luna-container width="default">
+    <div class="student-grid">
+      <!-- Left text -->
+      <div class="student-content">
+        <luna-badge variant="primary">
+          <span>THE STUDENT EXPERIENCE</span>
+        </luna-badge>
+        
+        <h2 class="student-title">Less "I can't."<br />More "I've got this."</h2>
+
+        <p class="student-intro">
+          A personalized learning path that follows your child's pace, sparks their imagination, and helps them grow with confidence. Lessons break complex ideas down into small, digestible steps with interactive practice and celebratory milestones.
+        </p>
+
+        <luna-button variant="primary" size="lg" routerLink="/signup">
+          <span>See a student in action</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+          </svg>
+        </luna-button>
+      </div>
+
+      <!-- Right student preview card -->
+      <div class="student-card-preview">
+        <div class="student-header-badge">
+          <div>
+            <h3 class="font-bold text-luna-heading text-base">Welcome back, Maya!</h3>
+            <span class="text-xs text-luna-muted">Middle school &middot; 5ème</span>
+          </div>
+          <span class="luna-badge luna-badge-warning font-semibold">Streak: 6 days ⚡</span>
+        </div>
+
+        <div class="student-goal-box">
+          <div>
+            <span class="text-xs font-semibold text-luna-primary">Positively steady! +4</span>
+            <div class="text-xs text-luna-text mt-0.5">Today's learning goal: 15 minutes</div>
+          </div>
+          <luna-button variant="primary" size="sm" routerLink="/courses">
+            <span>Continue lesson</span>
+            <span aria-hidden="true">&rarr;</span>
+          </luna-button>
+        </div>
+
+        <!-- Progress bar from styles.css -->
+        <div>
+          <div class="luna-progress-meta mb-1.5">
+            <span class="font-semibold text-luna-heading">Level progression: Mathematics</span>
+            <span class="font-bold text-luna-primary">72%</span>
+          </div>
+          <div class="luna-progress">
+            <div class="luna-progress-bar" style="width: 72%;"></div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2 pt-1 border-t border-luna-border">
+          <span class="luna-badge luna-badge-primary">🎯 Fraction Pioneer</span>
+          <span class="luna-badge luna-badge-success">⭐ Quiz Master</span>
+        </div>
+      </div>
+    </div>
+  </luna-container>
+</section>
+

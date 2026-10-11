@@ -1,0 +1,29 @@
+<section class="levels-section">
+  <luna-container width="default">
+    <div class="levels-header">
+      <h2 class="levels-title">Growing minds. A growing experience.</h2>
+    </div>
+
+    <div class="levels-grid">
+      @for (level of levels; track level.title) {
+        <article class="level-card">
+          <div class="level-card-top">
+            <h3 class="level-title">{{ level.title }}</h3>
+            <p class="level-desc">{{ level.description }}</p>
+          </div>
+
+          <div class="level-card-bottom">
+            <div class="level-age-number" [style.color]="level.textColor">
+              {{ level.ages }}
+            </div>
+
+            <luna-button variant="secondary" size="md" [block]="true" [routerLink]="level.path">
+              {{ level.cta }}
+            </luna-button>
+          </div>
+        </article>
+      }
+    </div>
+  </luna-container>
+</section>
+

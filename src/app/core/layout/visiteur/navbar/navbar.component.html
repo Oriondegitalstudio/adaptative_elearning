@@ -1,0 +1,106 @@
+<header class="luna-navbar">
+  <luna-container width="default">
+    <div class="navbar-inner">
+      <!-- Logo (Left) -->
+      <a routerLink="/home" (click)="scrollToTop($event)" class="navbar-brand" aria-label="Luna Home">
+        <img [src]="imagepath.LOGO" alt="Luna Logo" class="navbar-logo" />
+      </a>
+
+      <!-- Navigation Links (Center - Desktop) -->
+      <nav class="luna-nav navbar-desktop-nav" aria-label="Main Navigation">
+        @for (link of navLinks; track link.path) {
+          <a
+            [routerLink]="link.path"
+            (click)="link.path === '/home' ? scrollToTop($event) : null"
+            class="luna-nav-link"
+            routerLinkActive="luna-nav-link-active"
+            [routerLinkActiveOptions]="{ exact: link.path === '/home' }"
+          >
+            {{ link.label }}
+          </a>
+        }
+      </nav>
+
+      <!-- Desktop Auth & CTA Actions (Right) -->
+      <div class="navbar-desktop-actions">
+        <luna-button variant="ghost" size="md" (click)="navigateTo('/login')">
+          Login
+        </luna-button>
+
+        <luna-button variant="primary" size="md" (click)="navigateTo('/signup')">
+          <span>Get Started</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+          </svg>
+        </luna-button>
+      </div>
+
+      <!-- Tablet & Mobile Actions (Right) -->
+      <div class="navbar-mobile-actions">
+        <luna-button variant="primary" size="sm" (click)="navigateTo('/signup')">
+          <span>Get Started</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+          </svg>
+        </luna-button>
+
+        <luna-icon-button
+          label="Toggle navigation"
+          (click)="toggleMobileMenu()"
+          [attr.aria-expanded]="isMobileMenuOpen()"
+        >
+          @if (!isMobileMenuOpen()) {
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          } @else {
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          }
+        </luna-icon-button>
+      </div>
+    </div>
+  </luna-container>
+
+  <!-- Mobile & Tablet Drawer Menu -->
+  @if (isMobileMenuOpen()) {
+    <div class="navbar-backdrop" (click)="closeMobileMenu()" aria-hidden="true"></div>
+
+    <div class="navbar-mobile-drawer">
+      <luna-container width="default">
+        <div class="navbar-mobile-content">
+          <nav class="navbar-mobile-nav" aria-label="Mobile Navigation">
+            @for (link of navLinks; track link.path) {
+              <a
+                [routerLink]="link.path"
+                (click)="link.path === '/home' ? scrollToTop($event) : closeMobileMenu()"
+                class="navbar-mobile-link"
+                routerLinkActive="luna-nav-link-active"
+                [routerLinkActiveOptions]="{ exact: link.path === '/home' }"
+              >
+                <span>{{ link.label }}</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+              </a>
+            }
+          </nav>
+
+          <div class="navbar-mobile-buttons">
+            <luna-button variant="secondary" [block]="true" (click)="navigateTo('/login')">
+              Login
+            </luna-button>
+
+            <luna-button variant="primary" [block]="true" (click)="navigateTo('/signup')">
+              <span>Get Started</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </luna-button>
+          </div>
+        </div>
+      </luna-container>
+    </div>
+  }
+</header>

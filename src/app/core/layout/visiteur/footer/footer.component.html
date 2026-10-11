@@ -1,0 +1,71 @@
+<footer class="luna-footer">
+  <luna-container width="default">
+    <div class="footer-top">
+      
+      <!-- Brand Column -->
+      <div class="footer-brand">
+        <a routerLink="/home" aria-label="Luna Home">
+          <img [src]="imagepath.LOGO" alt="Luna Logo" class="footer-logo" />
+        </a>
+        <div class="footer-description">
+          <luna-text size="sm" color="muted" lineHeight="relaxed">
+            Adaptive e-learning platform for curious minds aged 6–18. Primary school to lycée.
+          </luna-text>
+        </div>
+      </div>
+
+      <!-- Links Column 1: Platform -->
+      <div>
+        <h4 class="footer-col-title">Platform</h4>
+        <ul class="footer-links">
+          @for (link of platformLinks; track link.path) {
+            <li>
+              <a [routerLink]="link.path" class="footer-link">{{ link.label }}</a>
+            </li>
+          }
+        </ul>
+      </div>
+
+      <!-- Links Column 2: Families -->
+      <div>
+        <h4 class="footer-col-title">Families</h4>
+        <ul class="footer-links">
+          @for (link of familiesLinks; track link.path) {
+            <li>
+              <a [routerLink]="link.path" class="footer-link">{{ link.label }}</a>
+            </li>
+          }
+        </ul>
+      </div>
+
+      <!-- Links Column 3: About LUNA -->
+      <div>
+        <h4 class="footer-col-title">About LUNA</h4>
+        <ul class="footer-links">
+          @for (link of aboutLinks; track link.path) {
+            <li>
+              <a [routerLink]="link.path" class="footer-link">{{ link.label }}</a>
+            </li>
+          }
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Copyright & Legal -->
+    <div class="footer-bottom">
+      <luna-text size="xs" color="muted">
+        &copy; {{ currentYear }} LUNA Learning Platform. All rights reserved.
+      </luna-text>
+
+      <div class="footer-legal-links">
+        <a routerLink="/terms" class="footer-legal-link">Terms of Service</a>
+        <span>&middot;</span>
+        <a routerLink="/privacy" class="footer-legal-link">Privacy Policy</a>
+        <span>&middot;</span>
+        <a routerLink="/cookies" class="footer-legal-link">Cookie Settings</a>
+      </div>
+    </div>
+  </luna-container>
+</footer>
+
