@@ -30,7 +30,7 @@ import { Component, Input } from '@angular/core';
       flex: 0 0 auto;
       border: 2px solid currentColor;
       border-right-color: transparent;
-      border-radius: 50%;
+      border-radius: 12px;
       animation: luna-spin .7s linear infinite;
     }
     @keyframes luna-spin { to { transform: rotate(360deg); } }
